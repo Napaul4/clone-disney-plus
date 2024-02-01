@@ -26,11 +26,19 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 768px) {
+      padding: 0 12px 0 20px;
+    }
+
     &__logo {
       max-width: 80px;
       width: 100%;
       margin: 5px;
       transition: opacity 0.5s ease;
+
+      @media (max-width: 768px) {
+        max-width: 64px;
+      }
     }
 
     &__links {
@@ -46,6 +54,13 @@
       height: 50px;
       display: flex;
       align-items: center;
+
+      @media (max-width: 768px) {
+        padding: 8px 11px;
+        height: 40px;
+        font-size: 13px;
+        letter-spacing: 0;
+      }
     }
   }
 }
