@@ -5,6 +5,7 @@
 @use "available-devices";
 @use "faq";
 @use "footer";
+@use "header";
 
 @mixin text($fontSize: 16px) {
   font-size: $fontSize;
@@ -81,12 +82,38 @@ body {
   height: 60px;
   font-size: 18px;
   color: variaveis.$corTextoSecundario;
-  background-color: #6421ff;
+  background-color: variaveis.$corDeFundoBotaoPrimario;
   text-transform: uppercase;
   border-radius: 4px;
-  margin-top: 2vw;
-  margin-bottom: 8px;
-  border: none;
+  border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
+  }
+
+  &--secondary {
+    background-color: variaveis.$corDeFundoBotaoSecundario;
+    border-color: variaveis.$corDeFundoBotaoSecundario;
+
+    &:hover {
+      background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+    }
+  }
+
+  &--dark {
+    background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+    border-color: variaveis.$corTextoSecundario;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: variaveis.$corTextoSecundario;
+      color: variaveis.$corDeFundo;
+    }
+  }
 }
 
 .image-text-section {
@@ -110,6 +137,7 @@ body {
   &--image-full-width {
     position: relative;
     display: block;
+    z-index: -1;
 
     img {
       width: 100%;
